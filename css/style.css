@@ -153,11 +153,21 @@
   }
   .eyebrow{
     font-family:'EB Garamond';
-    font-size:1.3rem;
+    font-size:4rem;
     color:var(--main-red);
     margin-bottom:22px;
     letter-spacing:0.03em;
   }
+
+    .eyebrow-special{
+    font-family:'Avallon';
+    font-size:4rem;
+    color:var(--main-red);
+    margin-bottom:22px;
+    letter-spacing:0.03em;
+  }
+
+  
   .hero-title{
     font-size:clamp(1.9rem, 4vw, 2.8rem);
     line-height:1.18;
@@ -214,7 +224,7 @@
     margin:80px auto 0;
     color:var(--cream-dim);
     line-height:1.75;
-    font-size:1rem;
+    font-size:1.5rem;
   }
   .pitch-word{ display:inline-block; }
   .tags{
@@ -251,7 +261,7 @@
     margin:0 auto;
   }
 
-  /* ---------- diviseur écaille ---------- */
+  /* ---------- diviseur ---------- */
   .scale-divider{
     height:34px;
     width:100%;
@@ -308,20 +318,12 @@
 
   .placeholder-note{
     margin-top:24px;
-    font-size:0.8rem;
+    font-size:1rem;
     color:var(--cream-dim);
     border-left:2px solid var(--main-red);
     padding-left:14px;
   }
 
-  .bonus{
-    margin-top:56px;
-    padding:32px;
-    border:1px solid rgba(176,141,87,0.35);
-    background:linear-gradient(180deg, rgba(176,141,87,0.06), transparent);
-  }
-  .bonus h3{ font-size:1.2rem; margin-bottom:12px; }
-  .bonus p{ color:var(--cream-dim); line-height:1.7; font-size:0.95rem; }
 
   /* ---------- extrait ---------- */
   .extract{
@@ -329,15 +331,19 @@
     border:1px dashed rgba(237,230,221,0.2);
     padding:40px;
   }
-  .extract p{ color:var(--cream-dim); font-style:italic; font-family:'EB Garamond'; font-size:1.05rem; line-height:1.8; }
-  .extract .cta-line{ margin-top:24px; font-family:'EB Garamond'; font-style:normal; font-size:0.85rem; color:var(--main-red); text-decoration:underline; cursor:pointer; }
+  .extract p{ color:var(--cream-dim); font-style:italic; font-family:'EB Garamond'; font-size:1.5rem; line-height:1.8; }
 
   /* ---------- retours ---------- */
   .quotes{ display:grid; gap:32px; }
   .quote{ border-top:1px solid rgba(237,230,221,0.12); padding-top:24px; }
-  .quote .stars{ color:var(--main-red); font-size:0.9rem; margin-bottom:10px; letter-spacing:2px; }
-  .quote p{ color:var(--cream-dim); line-height:1.7; font-size:0.95rem; }
-  .quote .who{ margin-top:10px; font-size:0.8rem; color:var(--cream-dim); opacity:0.7; }
+  .quote p{ color:var(--cream-dim); line-height:1.7; font-size:1.5rem; }
+  .quote .who{ margin-top:10px; font-size:1.5rem; color:var(--cream-dim); opacity:0.7; }
+
+    /* ---------- Updates ---------- */
+
+  .update {
+     color:var(--cream-dim); line-height:1.7; font-size:1.5rem;
+  }
 
   /* ---------- autrice ---------- */
   .author{ display:grid; grid-template-columns:120px 1fr; gap:32px; align-items:center; }
@@ -346,10 +352,10 @@
     border-radius:50%;
     border:1px solid var(--main-red);
     display:flex; align-items:center; justify-content:center;
-    font-family:'EB Garamond'; font-style:italic; font-size:1.6rem;
+    font-family: 'EB Garamond', serif; font-size:1rem;
     color:var(--main-red);
   }
-  .author p{ color:var(--cream-dim); line-height:1.75; font-size:0.95rem; }
+  .author p{ color:var(--cream-dim); line-height:1.75; font-size:1.5rem; }
 
   /* ---------- newsletter ---------- */
   .newsletter{ text-align:center; max-width:560px; }
@@ -365,10 +371,20 @@
     white-space:nowrap;
     border:0;
   }
+
+ .invitation{ 
+    color:var(--cream-dim); 
+    line-height:1.75; 
+    font-size:1.3rem;
+   }
+
+
   .form-row{ display:flex; border-bottom:1px solid var(--cream-dim); padding-bottom:12px; }
-  .form-row input{ flex:1; background:none; border:none; outline:none; color:var(--cream); font-family:'EB Garamond'; font-size:0.95rem; padding:8px 0; cursor:text; }
+  .form-row input{ flex:1; background:none; border:none; outline:none; color:var(--cream); font-family:'EB Garamond'; font-size:1.5rem; padding:8px 0; cursor:text; }
   .form-row input::placeholder{ color:var(--cream-dim); opacity:0.6; }
-  .form-row button{ background:none; border:none; color:var(--main-red); font-family:'EB Garamond'; font-size:0.85rem; letter-spacing:0.04em; cursor:pointer; }
+  .form-row button{ background:none; border:none; color:var(--main-red); font-family:'EB Garamond'; font-size:1.5rem; letter-spacing:0.04em; cursor:pointer; }
+
+
 
   /* ---------- footer ---------- */
   footer{ padding:80px 48px 40px; text-align:center; border-top:1px solid rgba(237,230,221,0.1); }
