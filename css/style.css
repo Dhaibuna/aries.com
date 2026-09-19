@@ -401,4 +401,7 @@
     .author{ grid-template-columns:1fr; text-align:center; justify-items:center; }
     .preorder-head{ flex-direction:column; align-items:flex-start; }
     .countdown{ text-align:left; }
+    .hero-signature .title-letter--accent {
+      color:var(--cream);
+    }
   }
