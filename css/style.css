@@ -153,7 +153,7 @@
   }
   .eyebrow{
     font-family:'EB Garamond';
-    font-size:4rem;
+    font-size: clamp(1.3rem, 6vw, 4rem);
     color:var(--main-red);
     margin-bottom:22px;
     letter-spacing:0.03em;
@@ -161,7 +161,7 @@
 
     .eyebrow-special{
     font-family:'Avallon';
-    font-size:4rem;
+    font-size:clamp(1.3rem, 6vw, 4rem);
     color:var(--main-red);
     margin-bottom:22px;
     letter-spacing:0.03em;
@@ -224,7 +224,7 @@
     margin:80px auto 0;
     color:var(--cream-dim);
     line-height:1.75;
-    font-size:1.5rem;
+    font-size:clamp(1rem, 4vw, 1.5rem);
   }
   .pitch-word{ display:inline-block; }
   .tags{
@@ -331,12 +331,12 @@
     border:1px dashed rgba(237,230,221,0.2);
     padding:40px;
   }
-  .extract p{ color:var(--cream-dim); font-style:italic; font-family:'EB Garamond'; font-size:1.5rem; line-height:1.8; }
+  .extract p{ color:var(--cream-dim); font-style:italic; font-family:'EB Garamond'; font-size:clamp(1rem, 4vw, 1.5rem); line-height:1.8; }
 
   /* ---------- retours ---------- */
   .quotes{ display:grid; gap:32px; }
   .quote{ border-top:1px solid rgba(237,230,221,0.12); padding-top:24px; }
-  .quote p{ color:var(--cream-dim); line-height:1.7; font-size:1.5rem; }
+  .quote p{ color:var(--cream-dim); line-height:1.7; font-size:clamp(1rem, 4vw, 1.5rem); }
   .quote .who{ margin-top:10px; font-size:1.5rem; color:var(--cream-dim); opacity:0.7; }
 
     /* ---------- Updates ---------- */
@@ -352,10 +352,10 @@
     border-radius:50%;
     border:1px solid var(--main-red);
     display:flex; align-items:center; justify-content:center;
-    font-family: 'EB Garamond', serif; font-size:1rem;
+    font-family: 'EB Garamond', serif; font-size:clamp(1rem, 4vw, 1.5rem);
     color:var(--main-red);
   }
-  .author p{ color:var(--cream-dim); line-height:1.75; font-size:1.5rem; }
+  .author p{ color:var(--cream-dim); line-height:1.75; font-size:clamp(1rem, 4vw, 1.5rem); }
 
   /* ---------- newsletter ---------- */
   .newsletter{ text-align:center; max-width:560px; }
@@ -380,9 +380,9 @@
 
 
   .form-row{ display:flex; border-bottom:1px solid var(--cream-dim); padding-bottom:12px; }
-  .form-row input{ flex:1; background:none; border:none; outline:none; color:var(--cream); font-family:'EB Garamond'; font-size:1.5rem; padding:8px 0; cursor:text; }
+  .form-row input{ flex:1; background:none; border:none; outline:none; color:var(--cream); font-family:'EB Garamond'; font-size: clamp(1rem, 4vw, 1.5rem); padding:8px 0; cursor:text; }
   .form-row input::placeholder{ color:var(--cream-dim); opacity:0.6; }
-  .form-row button{ background:none; border:none; color:var(--main-red); font-family:'EB Garamond'; font-size:1.5rem; letter-spacing:0.04em; cursor:pointer; }
+  .form-row button{ background:none; border:none; color:var(--main-red); font-family:'EB Garamond'; font-size:clamp(1rem, 4vw, 1.5rem); letter-spacing:0.04em; cursor:pointer; }
 
 
 
