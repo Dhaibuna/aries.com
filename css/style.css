@@ -91,12 +91,28 @@
     mix-blend-mode:difference;
   }
   .signature{
+    position : fixed;
+    z-index: 25; 
+    top : 90px; 
+    left : 50%;
+    transform: translateX(-50%);
     font-family:'Avallon', serif;
-    font-size:1.3rem;
+    font-size:clamp(3rem, 5vw, 2.2rem);
     letter-spacing:0.02em;
     text-decoration:none;
     color:inherit;
+    transition:top 0.5s ease, left 0.5s ease, transform 0.5s ease, font-size 0.5s ease;
   }
+
+  .signature.is-scrolled{
+  top:28px;
+  left:48px;
+  transform:translateX(0);
+  font-size:1.3rem;
+  color:inherit;
+  mix-blend-mode:difference;
+}
+
   .back-link{
     font-size:0.85rem;
     text-decoration:none;
@@ -105,7 +121,7 @@
     transition:border-color 0.3s;
   }
 
-  .header-brand{ display:flex; flex-direction:column; gap:6px; }
+  .header-brand{ display:flex; flex-direction:column; gap:6px; padding-top:34px;}
   .social-icons{ display:flex; gap:12px; }
   .social-icons a{
     color:var(--cream-dim);
@@ -385,6 +401,8 @@
     .author{ grid-template-columns:1fr; text-align:center; justify-items:center; }
     .preorder-head{ flex-direction:column; align-items:flex-start; }
     .countdown{ text-align:left; }
+    .signature { top: 100px; font-size:clamp(2.2rem, 7vw, 3.2rem); }
+    .signature.is-scrolled{ top:20px ; left:24px;}
     .hero-signature .title-letter--accent {
       color:var(--cream);
     }

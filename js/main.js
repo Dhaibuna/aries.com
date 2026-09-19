@@ -2,18 +2,18 @@
   var yearEl = document.getElementById('copyrightYear');
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-  // ----- "Aries Ravn" ramène en haut de page -----
-  var sigLink = document.getElementById('signatureLink');
-  if (sigLink) {
-    sigLink.addEventListener('click', function(e){
-      e.preventDefault();
-      if (window.__lenis) {
-        window.__lenis.scrollTo(0, { duration: 1.2 });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+  // ----- "Aries Ravn" top page -----
+ var sigEl = document.getElementById('signatureLink');
+function updateSignatureState(){
+  if (!sigEl) return;
+  if (window.scrollY > 100) {
+    sigEl.classList.add('is-scrolled');
+  } else {
+    sigEl.classList.remove('is-scrolled');
   }
+}
+window.addEventListener('scroll', updateSignatureState);
+updateSignatureState();
 
   // ----- Compte à rebours -----
   var target = new Date('2026-12-25T00:00:00');
@@ -25,7 +25,7 @@
     })();
   }
 
-  // ----- Curseur personnalisé (uniquement souris/trackpad) -----
+  // ----- Curseur personnalisé -----
   (function(){
     if(!window.matchMedia('(pointer:fine)').matches) return;
     var dot = document.getElementById('cursorDot');
@@ -47,7 +47,7 @@
     });
   })();
 
-  // ----- Scroll fluide (Lenis) + parallaxe (GSAP ScrollTrigger) -----
+  // ----- Scroll fluide (Lenis) + parallaxe -----
   try {
     var lenis = new Lenis({ duration: 1.1, smoothWheel: true });
     window.__lenis = lenis;
@@ -70,7 +70,7 @@
       opacity: 0, y: 20, duration: 1, stagger: 0.12, ease: 'power2.out', delay: 0.15
     });
 
-    // ----- Le pitch se révèle mot par mot, au scroll -----
+    // ----- Reveal pitch ----- 
     var pitchEl = document.querySelector('.hero-sub');
     if (pitchEl) {
       var words = pitchEl.textContent.trim().split(/\s+/);
@@ -91,6 +91,7 @@
     }
 
     // ----- Scroll-reveal des sections (hors hero) -----
+    
     gsap.utils.toArray('section:not(.hero)').forEach(function(sec){
       gsap.from(sec, {
         opacity: 0,
@@ -105,7 +106,7 @@
       });
     });
 
-    // ----- Tilt 3D sur les cases de précommande (souris/trackpad uniquement) -----
+    // ----- Tilt 3D sur les cases  préco -----
     if (window.matchMedia('(pointer:fine)').matches) {
       document.querySelectorAll('.edition').forEach(function(card){
         var qx = gsap.quickTo(card, 'rotationY', { duration: 0.4, ease: 'power2.out' });
@@ -124,7 +125,7 @@
       });
     }
 
-    // ----- Le chemin de lumière sur l'eau scintille doucement -----
+    // ----- Le chemin de lumière sur l'eau scintille  -----
     document.querySelectorAll('.illu-frame svg g[stroke-linecap="round"] line').forEach(function(line){
       gsap.to(line, {
         attr: { 'stroke-opacity': gsap.utils.random(0.02, 0.55) },
@@ -135,7 +136,7 @@
         delay: gsap.utils.random(0, 2)
       });
     });
-  } catch(e) { /* si les libs externes ne chargent pas, la page reste fonctionnelle sans smooth scroll */ }
+  } catch(e) {}
 
   // ----- TANAKA s'écrit lettre par lettre à l'arrivée sur la page -----
   (function revealTitle(){
@@ -166,7 +167,7 @@
     }
   })();
 
-  // ----- Formulaire newsletter -> Brevo (sans quitter la page) -----
+  // ----- Formulaire newsletter  -----
   (function(){
     var form = document.getElementById('newsletterForm');
     if (!form) return;
@@ -179,13 +180,13 @@
           document.getElementById('newsletterSuccess').hidden = false;
         })
         .catch(function(){
-          // si la requête échoue (réseau, bloqueur...), on retombe sur l'envoi natif du formulaire
+          // si la requête échoue
           form.submit();
         });
     });
   })();
 
-  // ----- Bouton musique (lecture manuelle uniquement, jamais automatique) -----
+  // ----- Bouton musique -----
   (function(){
     var btn = document.getElementById('musicToggle');
     var audio = document.getElementById('bgMusic');
@@ -195,7 +196,7 @@
       if (playing) {
         audio.pause();
       } else {
-        audio.play().catch(function(){ /* lecture bloquée par le navigateur, on ignore */ });
+        audio.play().catch(function(){});
       }
       playing = !playing;
       btn.setAttribute('aria-pressed', String(playing));
